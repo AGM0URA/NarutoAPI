@@ -144,6 +144,8 @@ nav {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  
+ 
 }
 
 #prevPage,
@@ -157,16 +159,19 @@ nav {
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-size: 16px;
+  margin-bottom: 20px;
 }
 
 #prevPage:hover,
 #nextPage:hover {
   background-color: #0056b3; /* Alterando a cor de fundo ao passar o mouse */
+  
 }
 
 .pagination-numbers {
   display: flex;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .page {

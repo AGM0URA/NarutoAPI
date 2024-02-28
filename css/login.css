@@ -1,0 +1,125 @@
+body {
+    font-family: njnaruto;
+    margin: 0;
+    background-color: #f0f0f0;
+    position: relative; /* Adicionando posição relativa */
+  }
+  
+  /* Adicionando um overlay escuro sobre a imagem de fundo */
+  body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 186.3%;
+    
+    background-color: rgba(0, 0, 0, 0.5); /* Cor preta com 50% de opacidade */
+    z-index: -1; /* Definindo um z-index para garantir que fique abaixo do conteúdo */
+  }
+  
+  /* Adicionando a imagem de fundo */
+  body {
+    background-image: url('../images/fundo.jpg'); /* Caminho para a imagem de fundo */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 3000px;
+  }
+
+nav {
+    background-color: #e65729; /* Alterando a cor de fundo da barra de navegação */
+    padding: 10px 0; /* Adicionando padding top e bottom para espaçamento interno */
+    text-align: center;
+    display: flex;
+    justify-content:space-around; /* Centralizando os itens horizontalmente */
+    align-items: center; /* Centralizando os itens verticalmente */
+    position: relative; /* Adicionando posição relativa para corrigir a sobreposição */
+    z-index: 1; /* Ajustando o z-index para garantir que a barra de navegação esteja acima do overlay */
+    
+}
+
+.logo {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.logo img {
+    width: 50px;
+}
+
+.links ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.links li {
+    display: inline-block;
+    margin-top: 0px;
+}
+
+.links li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.links li a:hover {
+    background-color: #555;
+}
+
+.login-container {
+    background-color: rgba(230, 87, 41, 0.8); /* Alterando a cor de fundo */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 350px; /* Definindo uma largura fixa para o formulário */
+    margin: auto; /* Centralizando o formulário na tela */
+    margin-top: 50px; /* Adicionando espaço superior */
+    color: white; /* Alterando a cor do texto */
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 3px;
+    border: none;
+    background-color: #fff; /* Alterando a cor do fundo do campo de entrada */
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #e65729; /* Alterando a cor de fundo do botão de login */
+    border: none;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Adicionando uma transição suave */
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3; /* Alterando a cor de fundo ao passar o mouse */
+}
+
+#username{
+    width: 330px;
+}
+
+#password{
+    width: 330px;
+}
