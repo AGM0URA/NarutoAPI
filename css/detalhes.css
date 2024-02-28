@@ -1,0 +1,129 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+ 
+  background-color: #f0f0f0;
+}
+
+header {
+  width: 1715 px;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 0px;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+}
+
+.character {
+  max-width: 300px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  background-color: white;
+  transition: transform 0.3s ease;
+  flex-grow: 1; /* Adicionando esta linha */
+}
+
+#characters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Alterando space-around para space-between */
+}
+.character:hover {
+  transform: translateY(-5px);
+}
+
+.character img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.character-details {
+  padding: 10px;
+}
+
+.character-name {
+  text-align: center;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-weight: bold;
+}
+
+.ver-mais-link {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  text-decoration: none;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.ver-mais-link:hover {
+  background-color: #0056b3;
+}
+
+#pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#prevPage,
+#nextPage {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+}
+
+#prevPage:hover,
+#nextPage:hover {
+  background-color: #0056b3;
+}
+
+.pagination-numbers {
+  display: flex;
+  align-items: center;
+}
+
+.page {
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+
+.page:hover {
+  background-color: #0056b3;
+}
+
+.current-page.page {
+  background-color: #0056b3;
+}
+
+
