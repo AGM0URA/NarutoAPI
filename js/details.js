@@ -41,6 +41,7 @@ async function showCharacterDetails(characterId) {
 
         const backButton = document.createElement("button");
         backButton.textContent = "Voltar para Personagens";
+        backButton.setAttribute("id", "back-button");
         backButton.addEventListener("click", voltarParaPersonagens);
         characterDetailsElement.appendChild(backButton);
     } catch (error) {
@@ -51,4 +52,3 @@ async function showCharacterDetails(characterId) {
 function voltarParaPersonagens() {
     window.location.href = "character.html";
 }
-

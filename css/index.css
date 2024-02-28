@@ -4,11 +4,6 @@ body {
     background-color: #f0f0f0;
     position: relative; /* Adicionando posição relativa */
   }
-
-  @font-face {
-  font-family:njnaruto;
-  src: url(../njnaruto.ttf);
-}
   
   /* Adicionando um overlay escuro sobre a imagem de fundo */
   body::before {
@@ -17,7 +12,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 110%;
+    height: 186.3%;
     
     background-color: rgba(0, 0, 0, 0.5); /* Cor preta com 50% de opacidade */
     z-index: -1; /* Definindo um z-index para garantir que fique abaixo do conteúdo */
@@ -29,18 +24,19 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 2000px;
+    background-size: 3000px;
   }
 
-  nav {
-    background-color: #e65729;
-    padding: 10px 0;
+nav {
+    background-color: #e65729; /* Alterando a cor de fundo da barra de navegação */
+    padding: 10px 0; /* Adicionando padding top e bottom para espaçamento interno */
     text-align: center;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    position: relative;
-    z-index: 2; /* Aumenta o z-index para garantir que a barra de navegação esteja acima do main */
+    justify-content:space-around; /* Centralizando os itens horizontalmente */
+    align-items: center; /* Centralizando os itens verticalmente */
+    position: relative; /* Adicionando posição relativa para corrigir a sobreposição */
+    z-index: 1; /* Ajustando o z-index para garantir que a barra de navegação esteja acima do overlay */
+    
 }
 
 .logo {
@@ -126,28 +122,4 @@ button[type="submit"]:hover {
 
 #password{
     width: 330px;
-}
-
-
-main {
-    background-color: #e65729;
-    text-align: center;
-    padding: 20px;
-    position: relative;
-    z-index: 1; /* Reduz o z-index para garantir que o main esteja abaixo da barra de navegação */
-    margin-top: 50px; /* Adicione um espaço entre a barra de navegação e o main */
-}
-
-h1{
-    font-size: 28px; /* Ajustando o tamanho do texto do h1 */
-    margin-bottom: 10px; /* Adicionando margem inferior para separar do parágrafo */
-}
-
-p {
-    font-size: 16px; /* Ajustando o tamanho do texto do parágrafo */
-    margin-bottom: 20px; /* Adicionando margem inferior para separar do próximo elemento */
-}
-
-h1, p, h3 {
-    letter-spacing: 5px; /* Adiciona um espaçamento entre as letras */
 }
