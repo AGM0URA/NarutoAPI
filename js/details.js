@@ -51,3 +51,4 @@ async function showCharacterDetails(characterId) {
 function voltarParaPersonagens() {
     window.location.href = "character.html";
 }
+

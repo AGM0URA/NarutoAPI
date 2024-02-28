@@ -1,46 +1,103 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: njnaruto;
   margin: 0;
- 
   background-color: #f0f0f0;
+  position: relative; /* Adicionando posição relativa */
+}
+
+/* Adicionando um overlay escuro sobre a imagem de fundo */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Cor preta com 50% de opacidade */
+  z-index: -1; /* Definindo um z-index para garantir que fique abaixo do conteúdo */
+}
+
+/* Adicionando a imagem de fundo */
+body {
+  background-image: url('../images/fundo.jpg'); /* Caminho para a imagem de fundo */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 header {
-  width: 400px;
+  width: 100%;
   height: 50px;
   text-align: center;
-  margin-bottom: 90px;
-  margin-top: 70px;
-  background-color: #333;
-  
-  
+  margin-bottom: 20px;
+  margin-top: 20px;
+  background-color: #e65729; /* Alterando a cor de fundo do cabeçalho */
   border-radius: 5px;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  margin-left: 690px
-
 }
+
+nav {
+  background-color: #e65729; /* Alterando a cor de fundo da barra de navegação */
+  padding: 10px 0; /* Adicionando padding top e bottom para espaçamento interno */
+  display: flex;
+  justify-content: space-around;
+}
+
+.logo {
+  display: inline-block;
+  margin-left: 40px;
+}
+
+.logo img {
+  width: 50px; 
+}
+
+.links ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.links li {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.links li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.links li a:hover {
+  background-color: #555;
+} 
 
 .character {
   max-width: 300px;
   width: 100%;
-  border: 1px solid #ccc;
+  border: 1px solid #434343;
   border-radius: 5px;
   margin-bottom: 20px;
   overflow: hidden;
-  background-color: white;
+  background-color: rgba(230, 87, 41, 0.8); /* Alterando a cor de fundo da div .character */
   transition: transform 0.3s ease;
-  flex-grow: 1; /* Adicionando esta linha */
+  flex-grow: 1;
 }
 
 #characters {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; /* Alterando space-around para space-between */
+  justify-content: space-between;
 }
+
 .character:hover {
   transform: translateY(-5px);
 }
@@ -60,7 +117,7 @@ header {
 .character-name {
   text-align: center;
   padding: 10px;
-  background-color: #007bff;
+  background-color: #e65729; /* Alterando a cor de fundo */
   color: white;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -72,7 +129,7 @@ header {
   text-align: center;
   margin-top: 10px;
   text-decoration: none;
-  background-color: #007bff;
+  background-color: #e65729; /* Alterando a cor de fundo */
   color: white;
   padding: 10px 20px;
   border-radius: 5px;
@@ -80,7 +137,7 @@ header {
 }
 
 .ver-mais-link:hover {
-  background-color: #0056b3;
+  background-color: #0056b3; /* Alterando a cor de fundo ao passar o mouse */
 }
 
 #pagination {
@@ -91,7 +148,7 @@ header {
 
 #prevPage,
 #nextPage {
-  background-color: #007bff;
+  background-color: #e65729; /* Alterando a cor de fundo */
   color: white;
   border: none;
   border-radius: 5px;
@@ -104,7 +161,7 @@ header {
 
 #prevPage:hover,
 #nextPage:hover {
-  background-color: #0056b3;
+  background-color: #0056b3; /* Alterando a cor de fundo ao passar o mouse */
 }
 
 .pagination-numbers {
@@ -113,7 +170,7 @@ header {
 }
 
 .page {
-  background-color: #007bff;
+  background-color: #e65729; /* Alterando a cor de fundo */
   color: white;
   border-radius: 50%;
   cursor: pointer;
@@ -127,70 +184,49 @@ header {
 }
 
 .page:hover {
-  background-color: #0056b3;
+  background-color: #0056b3; /* Alterando a cor de fundo ao passar o mouse */
 }
 
 .current-page.page {
   background-color: #0056b3;
 }
 
-
 nav {
-  background-color: rgb(230, 22, 22);
-  padding: 0px;
-  display: flex;
-  justify-content: space-around;
+  background-color: #e65729; /* Alterando a cor de fundo da barra de navegação */
+  padding: 10px 0;
+  text-align: center;
 }
 
 .logo {
-  display: inline-block;
-  margin-right: 20px;
-  margin-left: 40px;
-  margin-top: 10px;
+  margin: 0 20px;
 }
 
 .logo img {
-  width: 50px; 
+  width: 50px;
 }
 
 ul {
   list-style-type: none;
   padding: 0;
-  margin: 20px 0 0; /* Adicionando margem superior de 20px */
-  text-align: center; /* Centralizar horizontalmente */
 }
 
 li {
   display: inline-block;
+  margin: 0 10px;
 }
 
 li a {
   color: white;
   text-decoration: none;
   padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
 li a:hover {
   background-color: #555;
-} 
+}
 
-
-main{
+main {
   padding-left: 30px;
-}
-
-
-.links{
-  margin-top:20px;
-  list-style-type: none;
-
-  
-  text-align: center; 
-
-}
-
-#links li {
-  text-align: center;
-  display: inline;
-
 }
