@@ -2,10 +2,11 @@ body {
   font-family: njnaruto;
   margin: 0;
   background-color: #f0f0f0;
-  position: relative; /* Adicionando posição relativa */
+  position: relative;
 }
 
-/* Adicionando um overlay escuro sobre a imagem de fundo */
+
+/*Deixar um fumê em cima do backgrond*/
 body::before {
   content: '';
   position: absolute;
@@ -13,13 +14,12 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Cor preta com 50% de opacidade */
-  z-index: -1; /* Definindo um z-index para garantir que fique abaixo do conteúdo */
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
 }
 
-/* Adicionando a imagem de fundo */
 body {
-  background-image: url('../images/fundo.jpg'); /* Caminho para a imagem de fundo */
+  background-image: url('../images/fundo.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -31,7 +31,7 @@ header {
   text-align: center;
   margin-bottom: 20px;
   margin-top: 20px;
-  background-color: #e65729; /* Alterando a cor de fundo do cabeçalho */
+  background-color: #e65729;
   border-radius: 5px;
   color: white;
   display: flex;
@@ -40,10 +40,11 @@ header {
 }
 
 nav {
-  background-color: #e65729; /* Alterando a cor de fundo da barra de navegação */
-  padding: 10px 0; /* Adicionando padding top e bottom para espaçamento interno */
+  background-color: #e65729;
+  padding: 10px 0;
   display: flex;
   justify-content: space-around;
+  
 }
 
 .logo {
@@ -80,14 +81,47 @@ nav {
   background-color: #555;
 } 
 
-
 #character-details {
-  background-color: rgb(255, 255, 255); /* Altera a cor de fundo para branco com alguma transparência */
-  padding: 20px; /* Adiciona espaço interno para os detalhes */
-  border-radius: 5px; /* Adiciona bordas arredondadas */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra para destacar o elemento */
-  margin: 0 auto; /* Centraliza horizontalmente */
-  max-width: 80%; /* Limita a largura máxima para melhor legibilidade */
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin: 0 auto;
+  max-width: 80%;
+}
+
+#back-button {
+  margin-left: 2px;
+  background-color: #e65729;
+  color: rgb(255, 255, 255);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#back-button:hover {
+  background-color: #333;
+}
+
+/* Deixar respomnsivo*/
+@media screen and (max-width: 768px) {
+  .logo {
+    margin-left: 20px;
+  }
+  
+  .links li {
+    margin-top: 5px;
+  }
+  
+  .links li a {
+    padding: 8px 16px;
+  }
+  
+  #character-details {
+    padding: 10px;
+  }
 }
 
 

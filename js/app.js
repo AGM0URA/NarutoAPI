@@ -1,35 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const perPage = 20;
-    let currentPage = 1;
-
-    getAllCharacters(currentPage, perPage);
-    updatePageCounter(currentPage);
-    createPageNumbers();
-
-    document.getElementById("nextPage").addEventListener("click", function() {
-        currentPage++;
-        getAllCharacters(currentPage, perPage);
-        updatePageCounter(currentPage);
-    });
-
-    document.getElementById("prevPage").addEventListener("click", function() {
-        if (currentPage > 1) {
-            currentPage--;
-            getAllCharacters(currentPage, perPage);
-            updatePageCounter(currentPage);
-        }
-    });
-
-    document.querySelectorAll(".page-number").forEach(number => {
-        number.addEventListener("click", function() {
-            currentPage = parseInt(this.textContent);
-            getAllCharacters(currentPage, perPage);
-            updatePageCounter(currentPage);
-            updatePageNumbers();
-        });
-    });
-});
-
+//PEGAR A IMAGENS DOS PERSONAGENS POR PAGINA
 async function getAllCharacters(page, perPage) {
     const url = `https://dattebayo-api.onrender.com/characters?page=${page}&limit=${perPage}`;
     const loadingElement = document.querySelector("#loading");
@@ -70,6 +39,7 @@ async function getAllCharacters(page, perPage) {
     }
 }
 
+//PASSAR A PÁGINA
 function updatePageCounter(currentPage) {
     const pageCounter = document.querySelector("#pageCounter");
     if (pageCounter) {
@@ -100,3 +70,35 @@ function updatePageNumbers() {
         }
     });
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const perPage = 20;
+    let currentPage = 1;
+
+    getAllCharacters(currentPage, perPage);
+    updatePageCounter(currentPage);
+    createPageNumbers();
+
+    document.getElementById("nextPage").addEventListener("click", function() {
+        currentPage++;
+        getAllCharacters(currentPage, perPage);
+        updatePageCounter(currentPage);
+    });
+
+    document.getElementById("prevPage").addEventListener("click", function() {
+        if (currentPage > 1) {
+            currentPage--;
+            getAllCharacters(currentPage, perPage);
+            updatePageCounter(currentPage);
+        }
+    });
+
+    document.querySelectorAll(".page-number").forEach(number => {
+        number.addEventListener("click", function() {
+            currentPage = parseInt(this.textContent);
+            getAllCharacters(currentPage, perPage);
+            updatePageCounter(currentPage);
+            updatePageNumbers();
+        });
+    });
+});

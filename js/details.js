@@ -1,14 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const params = new URLSearchParams(window.location.search);
-    const characterId = params.get('id');
-    if (characterId) {
-        showCharacterDetails(characterId);
-    } else {
-        const characterDetailsElement = document.getElementById("character-details");
-        characterDetailsElement.textContent = "Não foi possível encontrar os detalhes do personagem.";
-    }
-});
-
+/*puxar os detalhes pelo ID*/
 async function showCharacterDetails(characterId) {
     const url = `https://dattebayo-api.onrender.com/characters/${characterId}`;
 
@@ -52,3 +42,15 @@ async function showCharacterDetails(characterId) {
 function voltarParaPersonagens() {
     window.location.href = "character.html";
 }
+
+/*Detelhes dos personagens*/
+document.addEventListener("DOMContentLoaded", function() {
+    const params = new URLSearchParams(window.location.search);
+    const characterId = params.get('id');
+    if (characterId) {
+        showCharacterDetails(characterId);
+    } else {
+        const characterDetailsElement = document.getElementById("character-details");
+        characterDetailsElement.textContent = "Não foi possível encontrar os detalhes do personagem.";
+    }
+});

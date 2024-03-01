@@ -2,37 +2,36 @@ body {
     font-family: njnaruto;
     margin: 0;
     background-color: #f0f0f0;
-    position: relative; /* Adicionando posição relativa */
-  }
-
-  @font-face {
-  font-family:njnaruto;
-  src: url(../njnaruto.ttf);
+    position: relative; 
+    overflow-x: hidden; 
+    height: 100vh; 
 }
-  
-  /* Adicionando um overlay escuro sobre a imagem de fundo */
-  body::before {
+
+@font-face {
+    font-family: njnaruto;
+    src: url(../njnaruto.ttf);
+}
+
+body::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 110%;
-    
-    background-color: rgba(0, 0, 0, 0.5); /* Cor preta com 50% de opacidade */
-    z-index: -1; /* Definindo um z-index para garantir que fique abaixo do conteúdo */
-  }
-  
-  /* Adicionando a imagem de fundo */
-  body {
-    background-image: url('../images/fundo.jpg'); /* Caminho para a imagem de fundo */
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: -1; 
+}
+
+body {
+    background-image: url('../images/fundo.jpg'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 2000px;
-  }
+    background-attachment: fixed;
+}
 
-  nav {
+nav {
     background-color: #e65729;
     padding: 10px 0;
     text-align: center;
@@ -40,7 +39,7 @@ body {
     justify-content: space-around;
     align-items: center;
     position: relative;
-    z-index: 2; /* Aumenta o z-index para garantir que a barra de navegação esteja acima do main */
+    z-index: 2;
 }
 
 .logo {
@@ -76,14 +75,15 @@ body {
 }
 
 .login-container {
-    background-color: rgba(230, 87, 41, 0.8); /* Alterando a cor de fundo */
+    background-color: rgba(230, 87, 41, 0.8);
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 350px; /* Definindo uma largura fixa para o formulário */
-    margin: auto; /* Centralizando o formulário na tela */
-    margin-top: 50px; /* Adicionando espaço superior */
-    color: white; /* Alterando a cor do texto */
+    width: 90%;
+    max-width: 350px;
+    margin: auto;
+    margin-top: 5%;
+    color: white;
     text-align: center;
 }
 
@@ -102,52 +102,73 @@ input[type="password"] {
     padding: 10px;
     border-radius: 3px;
     border: none;
-    background-color: #fff; /* Alterando a cor do fundo do campo de entrada */
+    background-color: #fff;
 }
 
 button[type="submit"] {
     width: 100%;
     padding: 10px;
-    background-color: #e65729; /* Alterando a cor de fundo do botão de login */
+    background-color: #e65729;
     border: none;
     border-radius: 3px;
     color: white;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Adicionando uma transição suave */
+    transition: background-color 0.3s ease;
 }
 
 button[type="submit"]:hover {
-    background-color: #0056b3; /* Alterando a cor de fundo ao passar o mouse */
+    background-color: #0056b3;
 }
 
 #username{
-    width: 330px;
+    width: 90%;
+    max-width: 330px;
+    margin: 0 auto;
 }
 
 #password{
-    width: 330px;
+    width: 90%;
+    max-width: 330px;
+    margin: 0 auto;
 }
-
 
 main {
     background-color: #e65729;
     text-align: center;
     padding: 20px;
     position: relative;
-    z-index: 1; /* Reduz o z-index para garantir que o main esteja abaixo da barra de navegação */
-    margin-top: 50px; /* Adicione um espaço entre a barra de navegação e o main */
+    z-index: 1;
+    margin-top: 5%;
 }
 
 h1{
-    font-size: 28px; /* Ajustando o tamanho do texto do h1 */
-    margin-bottom: 10px; /* Adicionando margem inferior para separar do parágrafo */
+    font-size: 28px;
+    margin-bottom: 10px;
 }
 
 p {
-    font-size: 16px; /* Ajustando o tamanho do texto do parágrafo */
-    margin-bottom: 20px; /* Adicionando margem inferior para separar do próximo elemento */
+    font-size: 16px;
+    margin-bottom: 20px;
 }
 
 h1, p, h3 {
-    letter-spacing: 5px; /* Adiciona um espaçamento entre as letras */
+    letter-spacing: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .logo {
+        margin-left: 10px;
+    }
+
+    .login-container {
+        width: 100%;
+        max-width: 90%;
+        margin-top: 10%;
+    }
+
+    #username, #password {
+        width: 90%;
+        max-width: 90%;
+        margin: 0 auto;
+    }
 }
